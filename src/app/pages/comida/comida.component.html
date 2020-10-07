@@ -1,0 +1,18 @@
+<form (ngSubmit)="ngSumited()" [formGroup]="formulario">
+
+    <h1 class="m-2 ">
+        Create food</h1>
+    <div class="formFood">
+        <input type="text " placeholder="name " class="m-2" formControlName="nombre">
+
+        <div class="m-2 inputs">
+            <input type="number" placeholder="Quantity of protein" class="mr-2" formControlName="proteina">
+            <input type="number" placeholder="Quantity of Carbohydrates" class="mr-2" formControlName="carbohidratos">
+            <input type="number" placeholder="Quantity of fats" class="mr-2 " formControlName="grasas">
+        </div>
+
+        <a routerLink="/comidas" class="btn btn-danger m-2">Return</a>
+        <button type="submit " class="btn btn-primary m-2 ">Save</button>
+    </div>
+
+</form>

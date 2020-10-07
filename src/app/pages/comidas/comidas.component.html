@@ -1,0 +1,33 @@
+<div class="contenedor">
+    <h1 class="mt-2">
+        Meals of the day
+    </h1>
+    <a class="btn btn-primary mb-3 mt-3" routerLink="/comida/id">Add</a>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">calories</th>
+                <th scope="col">food</th>
+                <th scope="col">protein</th>
+                <th scope="col">Carbohydrates</th>
+                <th scope="col">fats</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let comida of comidas; let i = index">
+                <th scope="row">{{comida.calorias}}</th>
+                <td>{{comida.nombre}}</td>
+                <td>{{comida.proteina}}</td>
+                <td>{{comida.carbohidratos}}</td>
+                <td>{{comida.grasas}}</td>
+                <td><button class="btn btn-danger" type="button" (click)="borrar(comida.id, i)"><i class="fas fa-trash-alt"></i></button></td>
+                <td><button class="btn btn-info" type="button" [routerLink]="['/comida', comida.id]"><i class="fas fa-pencil-alt"></i></button></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <div *ngIf="comidas.length === 0" class="alert alert-warning" role="alert">
+        <i class="fas fa-exclamation"></i> No meals added
+    </div>
+</div>
